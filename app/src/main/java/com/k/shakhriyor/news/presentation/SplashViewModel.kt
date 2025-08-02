@@ -1,5 +1,6 @@
 package com.k.shakhriyor.news.presentation
 
+import android.content.Context
 import android.util.Log
 import android.util.Printer
 import androidx.appcompat.app.AppCompatDelegate
@@ -9,8 +10,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.k.shakhriyor.news.data.store.LanguageStore
 import com.k.shakhriyor.news.data.store.TokenStore
 import com.k.shakhriyor.news.data.store.UiModeStore
+import com.k.shakhriyor.news.util.setLocal
 import com.k.shakhriyor.news.util.toast
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -21,7 +24,8 @@ import kotlinx.coroutines.launch
 @HiltViewModel
 class SplashViewModel @Inject constructor(
     private val tokenStore: TokenStore,
-    private val uiModeStore: UiModeStore
+    private val uiModeStore: UiModeStore,
+    private val languageStore: LanguageStore
 ) : ViewModel() {
 
 
@@ -34,5 +38,11 @@ class SplashViewModel @Inject constructor(
     fun setUiMode()= viewModelScope.launch{
        val modeType= uiModeStore.getModeType().firstOrNull()?:AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
         AppCompatDelegate.setDefaultNightMode(modeType)
+    }
+    fun setLanguage(context: Context)=viewModelScope.launch {
+        languageStore.getLanguage().firstOrNull()?.let {
+            setLocal(context,it)
+        }
+
     }
 }

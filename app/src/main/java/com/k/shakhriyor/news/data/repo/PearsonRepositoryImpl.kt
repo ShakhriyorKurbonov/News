@@ -2,6 +2,7 @@ package com.k.shakhriyor.news.data.repo
 
 import androidx.appcompat.app.AppCompatDelegate
 import com.k.shakhriyor.news.data.api.profile.PearsonApi
+import com.k.shakhriyor.news.data.store.LanguageStore
 import com.k.shakhriyor.news.data.store.UiModeStore
 import com.k.shakhriyor.news.domain.model.User
 import com.k.shakhriyor.news.domain.repo.PearsonRepository
@@ -12,7 +13,8 @@ import javax.inject.Inject
 
 class PearsonRepositoryImpl @Inject constructor(
     private val pearsonApi: PearsonApi,
-    private val uiModeStore: UiModeStore
+    private val uiModeStore: UiModeStore,
+    private val languageStore: LanguageStore
     ): PearsonRepository {
     override suspend fun getPearson(): User {
         return pearsonApi.getProfile()
@@ -24,5 +26,13 @@ class PearsonRepositoryImpl @Inject constructor(
 
     override suspend fun changeUiModeType(modeId: Int) {
         uiModeStore.changeModeType(modeId)
+    }
+
+    override suspend fun changeLanguage(langCode: String) {
+        languageStore.changeLanguage(langCode)
+    }
+
+    override fun getLanguage(): String? {
+       return runBlocking { languageStore.getLanguage().firstOrNull() }
     }
 }

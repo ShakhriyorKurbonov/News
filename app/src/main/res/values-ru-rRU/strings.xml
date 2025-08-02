@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Новости</string>
+    <string name="fragment_sign_in_log_in">Войти</string>
+    <string name="fragment_sign_in_enter_your_email">Введите вашу электронную почту</string>
+    <string name="fragment_sign_in_sign_up">Зарегистрироваться</string>
+    <string name="fragment_sign_up_enter_your_full_name">Введите ваше полное имя</string>
+    <string name="fragment_home_dogecoin_to_the_moon">Догикоин на Луну...</string>
+    <string name="fragment_home_lasted_news">Последние новости</string>
+    <string name="fragment_home_see_all">Посмотреть все</string>
+    <string name="retry">Повторить</string>
+    <string name="connection_error">Ошибка подключения</string>
+    <string name="error">Ошибка</string>
+    <string name="fragment_search_filter">Фильтр</string>
+    <string name="bottom_sheet_dialog_reset">Сбросить</string>
+    <string name="bottom_sheet_dialog_sort_by">Сортировать по</string>
+    <string name="bottom_sheet_dialog_save">Сохранить</string>
+    <string name="bottom_navigation_menu_home">Главная</string>
+    <string name="bottom_navigation_menu_favorite">Избранное</string>
+    <string name="bottom_navigation_menu_profile">Профиль</string>
+    <string name="fragment_favorite_favorites">Избранное</string>
+    <string name="fragment_profile_edit_profile">Редактировать профиль</string>
+    <string name="fragment_profile_notification">Уведомления</string>
+    <string name="fragment_profile_language">Язык</string>
+    <string name="fragment_profile_help_center">Центр помощи</string>
+    <string name="fragment_profile_dark_mode">Тёмная тема</string>
+    <string name="set_ui_mode">Установить тему интерфейса</string>
+    <string name="system">Системная</string>
+    <string name="night">Ночная</string>
+    <string name="light">Светлая</string>
+    <string name="save">Сохранить</string>
+    <string name="fragment_profile_log_out">Выйти</string>
+
+</resources>

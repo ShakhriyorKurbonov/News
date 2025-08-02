@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
+import com.k.shakhriyor.news.data.store.LanguageStore
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -35,6 +36,12 @@ object DataModule {
     @Provides
     fun provideUiModeStore(dataStore: DataStore<Preferences>):UiModeStore{
         return UiModeStore(dataStore)
+    }
+
+    @Singleton
+    @Provides
+    fun provideLanguageStore(dataStore: DataStore<Preferences>):LanguageStore{
+        return LanguageStore(dataStore)
     }
 
 }

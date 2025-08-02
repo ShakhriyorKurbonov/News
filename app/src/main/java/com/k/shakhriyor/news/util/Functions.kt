@@ -2,6 +2,7 @@ package com.k.shakhriyor.news.util
 
 import android.app.Activity
 import android.content.Context
+import android.content.res.Configuration
 import android.graphics.Color
 import android.view.View
 import android.view.Window
@@ -9,6 +10,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.k.shakhriyor.news.R
+import java.util.Locale
 
 fun toast(context: Context,string: String){
     Toast.makeText(context, string, Toast.LENGTH_SHORT).show()
@@ -48,6 +50,14 @@ fun Context.hideKeyboard(view: View){
 fun Context.showKeyboard(view: View){
     val inputMethodManager=getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
     inputMethodManager.showSoftInput(view,0)
+}
+
+ fun setLocal(context: Context,langCode:String){
+    val locale = Locale(langCode)
+    Locale.setDefault(locale)
+    val config = Configuration(context?.resources?.configuration)
+    config.setLocale(locale)
+    context.resources.updateConfiguration(config,context.resources.displayMetrics)
 }
 
 

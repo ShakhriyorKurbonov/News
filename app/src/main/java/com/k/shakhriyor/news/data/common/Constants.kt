@@ -6,6 +6,11 @@ object Constants {
     const val NEWS_TYPE="news_type"
     const val GET_NEWS="get_news"
     const val SYSTEM="system"
-    const val NIGHT="night"
-    const val LIGHT="light"
+    const val UZ="uz"
+    const val EN="en"
+    const val KK="kk"
+    const val KY="ky"
+    const val RU="ru"
+    const val TG="tg"
+    const val KAA="kaa"
 }

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Yangiliklar</string>
+    <string name="fragment_sign_in_log_in">Kirish</string>
+    <string name="fragment_sign_in_enter_your_email">Emailingizni kiriting</string>
+    <string name="fragment_sign_in_sign_up">Ro\'yxatdan o\'tish</string>
+    <string name="fragment_sign_up_enter_your_full_name">FISH ni kiriting</string>
+    <string name="fragment_home_dogecoin_to_the_moon">Oyga Dogecoin...</string>
+    <string name="fragment_home_lasted_news">So\'ngi yangiliklar</string>
+    <string name="fragment_home_see_all">Hammasi</string>
+    <string name="retry">Qayta yuklash</string>
+    <string name="connection_error">Ulanish xatosi</string>
+    <string name="error">Xatolik</string>
+    <string name="fragment_search_filter">Saralash</string>
+    <string name="bottom_sheet_dialog_reset">Qayta yukla</string>
+    <string name="bottom_sheet_dialog_sort_by">Tartiblash</string>
+    <string name="bottom_sheet_dialog_save">Saqlash</string>
+    <string name="bottom_navigation_menu_home">Uy</string>
+    <string name="bottom_navigation_menu_favorite">Sevimlilar</string>
+    <string name="bottom_navigation_menu_profile">Profil</string>
+    <string name="fragment_favorite_favorites">Sevimililar</string>
+    <string name="fragment_profile_edit_profile">Profilni taxrirlash</string>
+    <string name="fragment_profile_notification">Bildirishnoma</string>
+    <string name="fragment_profile_language">Til</string>
+    <string name="fragment_profile_help_center">Qo\'llab quvvatlash markazi</string>
+    <string name="fragment_profile_dark_mode">Tungi rejim</string>
+    <string name="set_ui_mode">FI rejimni o\'zgartirish</string>
+    <string name="system">Tizim</string>
+    <string name="night">Tungi</string>
+    <string name="light">Kungi</string>
+    <string name="save">Saqlash</string>
+    <string name="fragment_profile_log_out">Chiqish</string>
+</resources>

@@ -7,4 +7,6 @@ interface PearsonRepository {
     suspend fun getPearson(): User
      fun getUiModeType():Int
     suspend fun changeUiModeType(modeId:Int)
+    suspend fun changeLanguage(langCode:String)
+    fun getLanguage():String?
 }

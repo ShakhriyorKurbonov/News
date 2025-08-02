@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.k.shakhriyor.news.data.store.TokenStore
 import com.k.shakhriyor.news.domain.model.User
 import com.k.shakhriyor.news.domain.repo.PearsonRepository
 import com.k.shakhriyor.news.presentation.main_activity.home.HomeViewModel
@@ -18,7 +19,8 @@ import javax.inject.Inject
 @HiltViewModel
 
 class ProfileViewModel @Inject constructor(
-    private val pearsonRepository: PearsonRepository
+    private val pearsonRepository: PearsonRepository,
+    private val tokenStore: TokenStore
 ): ViewModel() {
 
     val loading= MutableLiveData<Boolean>(false)
@@ -52,6 +54,18 @@ class ProfileViewModel @Inject constructor(
 
     fun changeUiModeType(modeId:Int){
         viewModelScope.launch { pearsonRepository.changeUiModeType(modeId) }
+    }
+
+    fun logOut()=viewModelScope.launch{
+        tokenStore.removeToken()
+    }
+
+    fun changeLanguage(langCode:String){
+        viewModelScope.launch {  pearsonRepository.changeLanguage(langCode) }
+    }
+
+    fun getLanguage():String?{
+       return pearsonRepository.getLanguage()
     }
 
 }

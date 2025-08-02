@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Жаңалықтар</string>
+    <string name="fragment_sign_in_log_in">Кіру</string>
+    <string name="fragment_sign_in_enter_your_email">Электрондық поштаңызды енгізіңіз</string>
+    <string name="fragment_sign_in_sign_up">Тіркелу</string>
+    <string name="fragment_sign_up_enter_your_full_name">Толық атыңызды енгізіңіз</string>
+    <string name="fragment_home_dogecoin_to_the_moon">Dogecoin Айға қарай...</string>
+    <string name="fragment_home_lasted_news">Соңғы жаңалықтар</string>
+    <string name="fragment_home_see_all">Барлығын қарау</string>
+    <string name="retry">Қайталау</string>
+    <string name="connection_error">Байланыс қатесі</string>
+    <string name="error">Қате</string>
+    <string name="fragment_search_filter">Сүзгі</string>
+    <string name="bottom_sheet_dialog_reset">Қалпына келтіру</string>
+    <string name="bottom_sheet_dialog_sort_by">Сұрыптау</string>
+    <string name="bottom_sheet_dialog_save">Сақтау</string>
+    <string name="bottom_navigation_menu_home">Басты бет</string>
+    <string name="bottom_navigation_menu_favorite">Таңдаулылар</string>
+    <string name="bottom_navigation_menu_profile">Профиль</string>
+    <string name="fragment_favorite_favorites">Таңдаулылар</string>
+    <string name="fragment_profile_edit_profile">Профильді өңдеу</string>
+    <string name="fragment_profile_notification">Хабарламалар</string>
+    <string name="fragment_profile_language">Тіл</string>
+    <string name="fragment_profile_help_center">Көмек орталығы</string>
+    <string name="fragment_profile_dark_mode">Қараңғы режим</string>
+    <string name="set_ui_mode">Интерфейс режимін орнату</string>
+    <string name="system">Жүйелік</string>
+    <string name="night">Түнгі</string>
+    <string name="light">Жарық</string>
+    <string name="save">Сақтау</string>
+    <string name="fragment_profile_log_out">Шығу</string>
+</resources>

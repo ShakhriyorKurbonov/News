@@ -1,5 +1,9 @@
 package com.k.shakhriyor.news.presentation.main_activity.profile
 
+import android.app.Activity
+import android.content.Context
+import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,11 +17,17 @@ import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.k.shakhriyor.news.R
+import com.k.shakhriyor.news.data.common.Constants
 import com.k.shakhriyor.news.databinding.BottomSheetDialogBinding
 import com.k.shakhriyor.news.databinding.FragmentProfileBinding
+import com.k.shakhriyor.news.databinding.LanguageBottomSheetDialogBinding
 import com.k.shakhriyor.news.databinding.UiModeBottomSheetDialogBinding
+import com.k.shakhriyor.news.presentation.SplashActivity
+import com.k.shakhriyor.news.presentation.main_activity.MainActivity
 import com.k.shakhriyor.news.presentation.main_activity.home.HomeViewModel
+import com.k.shakhriyor.news.util.setLocal
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.Locale
 
 @AndroidEntryPoint
 
@@ -82,12 +92,83 @@ class ProfileFragment: Fragment() {
             viewModel.getPearson()
         }
 
-        binding.darkModeTv.setOnClickListener {
+        binding.nightModeContainer.setOnClickListener {
             setUiMode()
+        }
+
+        binding.logOut.setOnClickListener {
+            logOut()
+        }
+
+        binding.languageContainer.setOnClickListener {
+            setLanguage()
         }
 
     }
 
+    private fun setLanguage() {
+
+        val bottomDialog=BottomSheetDialog(requireContext())
+        val bind=LanguageBottomSheetDialogBinding.inflate(layoutInflater)
+        bottomDialog.setContentView(bind.root)
+        bottomDialog.setCancelable(false)
+
+
+        viewModel.getLanguage()?.let {
+            it.let { langCode->
+                when(langCode){
+                    Constants.UZ->{bind.radioGroup.check(R.id.uzbekRadio)}
+                    Constants.RU->{bind.radioGroup.check(R.id.rusRadio)}
+                    Constants.EN->{bind.radioGroup.check(R.id.engRadio)}
+                    Constants.KK->{bind.radioGroup.check(R.id.kazRadio)}
+                    Constants.KY->{bind.radioGroup.check(R.id.kyRadio)}
+                    Constants.TG->{bind.radioGroup.check(R.id.tgRadio)}
+                    Constants.KAA->{bind.radioGroup.check(R.id.kaaRadio)}
+                }
+            }
+        }
+
+        bind.saveBtn.setOnClickListener {
+            val radioButtonId=bind.radioGroup.checkedRadioButtonId
+            when(radioButtonId){
+                R.id.uzbekRadio->{
+                    setLocal(requireActivity(),Constants.UZ)
+                    viewModel.changeLanguage(Constants.UZ)
+                }
+                R.id.rusRadio->{
+                    setLocal(requireActivity(),Constants.RU)
+                    viewModel.changeLanguage(Constants.RU)
+                }
+                R.id.engRadio->{
+                    setLocal(requireActivity(),Constants.EN)
+                    viewModel.changeLanguage(Constants.EN)
+                }
+                R.id.kazRadio->{
+                    setLocal(requireActivity(),Constants.KK)
+                    viewModel.changeLanguage(Constants.KK)
+                }
+                R.id.kyRadio->{
+                    setLocal(requireActivity(),Constants.KY)
+                    viewModel.changeLanguage(Constants.KY)
+                }
+                R.id.tgRadio->{
+                    setLocal(requireActivity(),Constants.TG)
+                    viewModel.changeLanguage(Constants.TG)
+                }
+                R.id.kaaRadio->{
+                    setLocal(requireActivity(),Constants.KAA)
+                    viewModel.changeLanguage(Constants.KAA)
+                }
+            }
+            bottomDialog.dismiss()
+            Intent(requireContext(),SplashActivity::class.java).apply {
+                startActivity(this)
+            }
+            activity?.finish()
+        }
+
+        bottomDialog.show()
+    }
 
 
     private fun setUiMode(){
@@ -128,4 +209,15 @@ class ProfileFragment: Fragment() {
         }
         bottomDialog.show()
     }
+
+    private fun logOut(){
+        viewModel.logOut()
+        Intent(requireContext(),SplashActivity::class.java).apply {
+            startActivity(this)
+        }
+        activity?.finish()
+    }
+
+
+
 }

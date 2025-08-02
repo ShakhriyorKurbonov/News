@@ -30,5 +30,4 @@
     <string name="light">Light</string>
     <string name="save">Save</string>
     <string name="fragment_profile_log_out">Log out</string>
-    <string name="set_language">Set Language</string>
 </resources>

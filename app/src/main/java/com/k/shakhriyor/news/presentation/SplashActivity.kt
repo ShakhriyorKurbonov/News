@@ -19,6 +19,7 @@ class SplashActivity:AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         viewModel.setUiMode()
+        viewModel.setLanguage(this)
 
         viewModel.isLoggedIn.observe(this){isLoggedIn->
             val intent=if (isLoggedIn)
