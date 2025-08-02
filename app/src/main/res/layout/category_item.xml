@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="32dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/categoryItemTv"
+    tools:text="Technology"
+    style="@style/TextColor"
+    android:gravity="center"
+    android:paddingHorizontal="16dp"
+    android:background="@drawable/gray_rectangle_16"
+    android:layout_marginHorizontal="4dp" />

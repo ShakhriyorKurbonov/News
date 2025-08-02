@@ -1,0 +1,52 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.News" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <!-- Customize your theme here. -->
+
+        <item name="android:windowTranslucentNavigation">true</item>
+
+    </style>
+
+    <style name="Theme.News" parent="Base.Theme.News" />
+
+    <style name="TextColor">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:drawableTint">@color/white</item>
+    </style>
+    <style name="TextColorBottomDialog">
+        <item name="android:textColor">#041E2F</item>
+        <item name="android:drawableTint">@color/white</item>
+    </style>
+    <style name="BoxStrokeColor">
+        <item name="boxStrokeColor">#EE5452</item>
+    </style>
+    <style name="ScreenBackgroundColor">
+        <item name="android:background">@color/white</item>
+    </style>
+    <style name="NewsListTextColor">
+        <item name="android:textColor">#FF3A44</item>
+    </style>
+    <style name="NewsTextColor">
+        <item name="android:textColor">#2E0505</item>
+    </style>
+    <style name="DateTextColor">
+        <item name="android:textColor">#2E0505</item>
+    </style>
+    <style name="AuthorTextColor">
+        <item name="android:textColor">#2E0505</item>
+    </style>
+    <style name="TitleTextColor">
+        <item name="android:textColor">#121212</item>
+    </style>
+    <style name="SeeAllTextColor">
+        <item name="android:textColor">#0080FF</item>
+    </style>
+    <style name="ActivityScreenBackgroundColor">
+        <item name="android:background">@color/white</item>
+        <item name="android:layout_marginBottom">52dp</item>
+    </style>
+</resources>

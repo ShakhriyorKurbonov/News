@@ -1,0 +1,45 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.News" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    </style>
+    <style name="TextColor">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:drawableTint">#C9C3CFFF</item>
+    </style>
+    <style name="TextColorBottomDialog">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:drawableTint">#C9C3CFFF</item>
+    </style>
+    <style name="BoxStrokeColor">
+        <item name="boxStrokeColor">#FA9190</item>
+    </style>
+    <style name="ScreenBackgroundColor">
+        <item name="android:background">#211F1F</item>
+    </style>
+    <style name="NewsListTextColor">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="NewsTextColor">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="DateTextColor">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="AuthorTextColor">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="TitleTextColor">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="SeeAllTextColor">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+    <style name="ActivityScreenBackgroundColor">
+        <item name="android:background">#211F1F</item>
+        <item name="android:layout_marginBottom">0dp</item>
+    </style>
+</resources>

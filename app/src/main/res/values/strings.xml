@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">News</string>
+    <string name="fragment_sign_in_log_in">Log in</string>
+    <string name="fragment_sign_in_enter_your_email">Enter your email</string>
+    <string name="fragment_sign_in_sign_up">Sign up</string>
+    <string name="fragment_sign_up_enter_your_full_name">Enter your full name</string>
+    <string name="fragment_home_dogecoin_to_the_moon">Dogecoin to the Moon...</string>
+    <string name="fragment_home_lasted_news">Lasted News</string>
+    <string name="fragment_home_see_all">See all</string>
+    <string name="retry">Retry</string>
+    <string name="connection_error">Connection Error</string>
+    <string name="error">Error</string>
+    <string name="fragment_search_filter">Filter</string>
+    <string name="bottom_sheet_dialog_reset">Reset</string>
+    <string name="bottom_sheet_dialog_sort_by">Sort By</string>
+    <string name="bottom_sheet_dialog_save">Save</string>
+    <string name="bottom_navigation_menu_home">Home</string>
+    <string name="bottom_navigation_menu_favorite">Favorite</string>
+    <string name="bottom_navigation_menu_profile">Profile</string>
+    <string name="fragment_favorite_favorites">Favorites</string>
+    <string name="fragment_profile_edit_profile">Edit Profile</string>
+    <string name="fragment_profile_notification">Notification</string>
+    <string name="fragment_profile_language">Language</string>
+    <string name="fragment_profile_help_center">Help Center</string>
+    <string name="fragment_profile_dark_mode">Dark Mode</string>
+    <string name="set_ui_mode">Set Ui mode</string>
+    <string name="system">System</string>
+    <string name="night">Night</string>
+    <string name="light">Light</string>
+    <string name="save">Save</string>
+</resources>
