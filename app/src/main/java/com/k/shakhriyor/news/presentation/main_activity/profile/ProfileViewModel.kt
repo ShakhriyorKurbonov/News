@@ -68,4 +68,20 @@ class ProfileViewModel @Inject constructor(
        return pearsonRepository.getLanguage()
     }
 
+    fun getNotificationStatus(): Boolean{
+       return pearsonRepository.getNotificationStatus()
+    }
+
+    fun changeNotificationStatus(isTurnOn: Boolean){
+      viewModelScope.launch {  pearsonRepository.changeNotificationStatus(isTurnOn) }
+    }
+
+    fun getNotificationImportanceStatus(): Boolean{
+       return pearsonRepository.getNotificationImportanceStatus()
+    }
+
+    fun changeNotificationImportanceStatus(isVoiced: Boolean){
+      viewModelScope.launch {  pearsonRepository.changeNotificationImportanceStatus(isVoiced) }
+    }
+
 }

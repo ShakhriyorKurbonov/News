@@ -31,4 +31,8 @@
     <string name="save">Save</string>
     <string name="fragment_profile_log_out">Log out</string>
     <string name="set_language">Set Language</string>
+    <string name="settings_notification">Settings Notification</string>
+    <string name="voiced">Voiced</string>
+    <string name="silent">Silent</string>
+    <string name="notification">Notification</string>
 </resources>

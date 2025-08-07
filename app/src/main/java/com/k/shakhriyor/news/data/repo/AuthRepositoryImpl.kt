@@ -13,8 +13,8 @@ class AuthRepositoryImpl @Inject constructor(
     private val authApi: AuthApi,
     private val tokenStore: TokenStore
 ) :AuthRepository {
-    override suspend fun signIn(email: String, password: String): Boolean {
-        val response=authApi.signIn(SignInRequest(email,password))
+    override suspend fun signIn(email: String, password: String, fcmToken: String): Boolean {
+        val response=authApi.signIn(SignInRequest(email,password,fcmToken ))
         tokenStore.addToken(response.token)
         val token=tokenStore.getToken().firstOrNull()
         return !token.isNullOrBlank()||!token.isNullOrEmpty()
@@ -24,9 +24,10 @@ class AuthRepositoryImpl @Inject constructor(
     override suspend fun signUp(
         email: String,
         fullName: String,
-        password: String
+        password: String,
+        fcmToken: String
     ): Boolean {
-        val response=authApi.signUp(SignUpRequest(email, fullName, password))
+        val response=authApi.signUp(SignUpRequest(email, fullName, password,fcmToken))
         tokenStore.addToken(response.token)
         val token=tokenStore.getToken().firstOrNull()
         return !token.isNullOrBlank()||!token.isNullOrEmpty()

@@ -15,6 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="50dp"
         android:text="@string/fragment_sign_in_sign_up"
+        android:gravity="center"
         android:textStyle="bold"
         android:id="@+id/logInTxt"
         style="@style/TextColor"

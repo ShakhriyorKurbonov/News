@@ -5,6 +5,8 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import com.k.shakhriyor.news.data.store.LanguageStore
+import com.k.shakhriyor.news.data.store.NotificationImportanceStore
+import com.k.shakhriyor.news.data.store.NotificationStore
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -42,6 +44,18 @@ object DataModule {
     @Provides
     fun provideLanguageStore(dataStore: DataStore<Preferences>):LanguageStore{
         return LanguageStore(dataStore)
+    }
+
+    @Singleton
+    @Provides
+    fun provideNotificationStore(dataStore: DataStore<Preferences>): NotificationStore{
+        return NotificationStore(dataStore)
+    }
+
+    @Singleton
+    @Provides
+    fun provideNotificationImportanceStore(dataStore: DataStore<Preferences>): NotificationImportanceStore{
+        return NotificationImportanceStore(dataStore)
     }
 
 }

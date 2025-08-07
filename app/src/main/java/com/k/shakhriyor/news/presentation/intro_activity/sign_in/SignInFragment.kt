@@ -61,6 +61,7 @@ class SignInFragment: Fragment() {
     }
 
 
+    @SuppressLint("SuspiciousIndentation")
     private fun initUI()= with(binding) {
       val email= emailEt.text.toString()
       val password= passwordEt.text.toString()

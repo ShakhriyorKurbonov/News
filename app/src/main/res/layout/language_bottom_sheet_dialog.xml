@@ -43,6 +43,15 @@
             <RadioButton
                 android:layout_width="match_parent"
                 android:backgroundTint="@color/red"
+                android:text="Ўзбек"
+                android:paddingStart="8dp"
+                app:buttonTint="#FF5D5A"
+                android:id="@+id/uzbekKRadio"
+                android:layout_height="wrap_content"
+                tools:ignore="RtlSymmetry" />
+            <RadioButton
+                android:layout_width="match_parent"
+                android:backgroundTint="@color/red"
                 android:text="Русский"
                 android:paddingStart="8dp"
                 android:id="@+id/rusRadio"
@@ -70,7 +79,7 @@
             <RadioButton
                 android:layout_width="match_parent"
                 android:backgroundTint="@color/red"
-                android:text="қазақ"
+                android:text="Қазақ"
                 android:id="@+id/kazRadio"
                 app:buttonTint="#FF5D5A"
                 android:paddingStart="@dimen/_8dp"
@@ -88,7 +97,7 @@
             <RadioButton
                 android:layout_width="match_parent"
                 android:backgroundTint="@color/red"
-                android:text="тоҷикӣ"
+                android:text="Тоҷикӣ"
                 android:id="@+id/tgRadio"
                 app:buttonTint="#FF5D5A"
                 android:paddingStart="@dimen/_8dp"

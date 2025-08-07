@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.google.firebase.messaging.FirebaseMessaging
 import com.k.shakhriyor.news.data.store.TokenStore
 import com.k.shakhriyor.news.domain.repo.AuthRepository
 import com.k.shakhriyor.news.util.SingleLiveEvent
@@ -11,6 +12,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import jakarta.inject.Inject
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
 import java.io.IOException
 
 
@@ -29,7 +31,8 @@ class SignUpViewModel @Inject constructor(
         viewModelScope.launch {
             loading.postValue(true)
             try {
-                val l=authRepository.signUp(email, fullName, password)
+                val fcmToken= FirebaseMessaging.getInstance().token.await()
+                val l=authRepository.signUp(email, fullName, password,fcmToken)
                 isLoggedIn.postValue(l)
             }catch (e:Exception){
                 Log.d("TAG", "signUp: $e")

@@ -9,4 +9,8 @@ interface PearsonRepository {
     suspend fun changeUiModeType(modeId:Int)
     suspend fun changeLanguage(langCode:String)
     fun getLanguage():String?
+    fun getNotificationStatus(): Boolean
+    suspend fun changeNotificationStatus(isTurnOn: Boolean)
+    fun getNotificationImportanceStatus(): Boolean
+    suspend fun changeNotificationImportanceStatus(isVoiced: Boolean)
 }

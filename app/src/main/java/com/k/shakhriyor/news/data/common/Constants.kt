@@ -13,4 +13,12 @@ object Constants {
     const val RU="ru"
     const val TG="tg"
     const val KAA="kaa"
+    const val UZK="uzk"
+
+    const val LIKE="like"
+    const val AUTHOR="author"
+    const val POSTEDDATE="postedDate"
+    const val IMAGE="image"
+    const val DESCRIPTION="description"
+    const val TITLE="title"
 }

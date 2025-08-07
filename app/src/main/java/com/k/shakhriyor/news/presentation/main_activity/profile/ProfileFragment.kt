@@ -10,10 +10,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.view.children
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.k.shakhriyor.news.R
@@ -21,6 +23,7 @@ import com.k.shakhriyor.news.data.common.Constants
 import com.k.shakhriyor.news.databinding.BottomSheetDialogBinding
 import com.k.shakhriyor.news.databinding.FragmentProfileBinding
 import com.k.shakhriyor.news.databinding.LanguageBottomSheetDialogBinding
+import com.k.shakhriyor.news.databinding.NotificationSettingsBottomSheetDialogBinding
 import com.k.shakhriyor.news.databinding.UiModeBottomSheetDialogBinding
 import com.k.shakhriyor.news.presentation.SplashActivity
 import com.k.shakhriyor.news.presentation.main_activity.MainActivity
@@ -104,6 +107,10 @@ class ProfileFragment: Fragment() {
             setLanguage()
         }
 
+        binding.notificationContainer.setOnClickListener {
+            notificationSettings()
+        }
+
     }
 
     private fun setLanguage() {
@@ -118,6 +125,7 @@ class ProfileFragment: Fragment() {
             it.let { langCode->
                 when(langCode){
                     Constants.UZ->{bind.radioGroup.check(R.id.uzbekRadio)}
+                    Constants.UZK->{bind.radioGroup.check(R.id.uzbekKRadio)}
                     Constants.RU->{bind.radioGroup.check(R.id.rusRadio)}
                     Constants.EN->{bind.radioGroup.check(R.id.engRadio)}
                     Constants.KK->{bind.radioGroup.check(R.id.kazRadio)}
@@ -134,6 +142,10 @@ class ProfileFragment: Fragment() {
                 R.id.uzbekRadio->{
                     setLocal(requireActivity(),Constants.UZ)
                     viewModel.changeLanguage(Constants.UZ)
+                }
+                R.id.uzbekKRadio->{
+                    setLocal(requireActivity(),Constants.UZK)
+                    viewModel.changeLanguage(Constants.UZK)
                 }
                 R.id.rusRadio->{
                     setLocal(requireActivity(),Constants.RU)
@@ -218,6 +230,54 @@ class ProfileFragment: Fragment() {
         activity?.finish()
     }
 
+    private fun notificationSettings() {
+        val bottomDialog= BottomSheetDialog(requireContext())
+        val bind= NotificationSettingsBottomSheetDialogBinding.inflate(layoutInflater)
+        bottomDialog.setContentView(bind.root)
+        bottomDialog.setCancelable(false)
 
+        val isChecked=viewModel.getNotificationStatus()
+        bind.voiceSwitch.isChecked=isChecked
+
+        viewVisibility(bind.radioGroup,isChecked)
+
+        val isVoiced=viewModel.getNotificationImportanceStatus()
+        if (isVoiced){
+            bind.radioGroup.check(R.id.voicedRadio)
+        }else{
+            bind.radioGroup.check(R.id.silentRadio)
+        }
+
+        bind.voiceSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
+            viewVisibility(bind.radioGroup,isChecked)
+        }
+
+        bind.saveBtn.setOnClickListener {
+
+
+            viewModel.changeNotificationStatus(bind.voiceSwitch.isChecked)
+
+            val isVoiced= bind.radioGroup.checkedRadioButtonId==R.id.voicedRadio
+
+            viewModel.changeNotificationImportanceStatus(isVoiced)
+
+            bottomDialog.dismiss()
+
+        }
+
+
+        bottomDialog.show()
+
+    }
+
+
+    private fun viewVisibility(view:View,isChecked: Boolean){
+        if (isChecked){
+            view.visibility= View.VISIBLE
+        }else{
+            view.visibility= View.GONE
+        }
+    }
 
 }
+

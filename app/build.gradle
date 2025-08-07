@@ -7,6 +7,7 @@ plugins {
     //navigation component
     id("androidx.navigation.safeargs.kotlin")
     id("kotlin-parcelize")
+    id 'com.google.gms.google-services'
 
 }
 
@@ -50,6 +51,13 @@ dependencies {
     implementation libs.androidx.activity
     implementation libs.androidx.constraintlayout
 
+    //firebase
+    implementation(platform("com.google.firebase:firebase-bom:34.0.0"))
+
+    // Add the dependencies for the Firebase Cloud Messaging and Analytics libraries
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation("com.google.firebase:firebase-messaging")
+
 
     //Dagger Hilt
     implementation("com.google.dagger:hilt-android:2.56.2")
@@ -85,6 +93,9 @@ dependencies {
 
     //SwipeRefreshLayout
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
+    //Splash screen
+    implementation "androidx.core:core-splashscreen:1.0.1"
 
     testImplementation libs.junit
     androidTestImplementation libs.androidx.junit
